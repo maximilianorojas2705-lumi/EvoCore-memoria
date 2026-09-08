@@ -13,6 +13,6 @@
   "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto')",
   "cuando": 1788893021,
   "repetir_segundos": 0,
-  "activa": true
+  "activa": false
  }
 ]
