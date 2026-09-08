@@ -14,5 +14,13 @@
   "cuando": 1788892253,
   "repetir_segundos": 0,
   "activa": true
+ },
+ {
+  "id": "a8a410",
+  "descripcion": "Enviar mensaje de prueba por Telegram",
+  "accion": "import os, requests\nbot_token = os.getenv('TELEGRAM_BOT_TOKEN')\nchat_id = os.getenv('TELEGRAM_CHAT_ID')\nmessage = '🤖 Auto-tarea de prueba ejecutada correctamente'\nurl = f'https://api.telegram.org/bot{bot_token}/sendMessage'\nresp = requests.post(url, data={'chat_id': chat_id, 'text': message})\nprint('Telegram response:', resp.status_code, resp.text)",
+  "cuando": 1788892315,
+  "repetir_segundos": 0,
+  "activa": true
  }
 ]
