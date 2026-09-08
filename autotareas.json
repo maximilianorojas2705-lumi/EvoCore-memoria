@@ -21,6 +21,6 @@
   "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto después del fix')",
   "cuando": 1788897343,
   "repetir_segundos": 0,
-  "activa": true
+  "activa": false
  }
 ]
