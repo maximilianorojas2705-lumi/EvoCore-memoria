@@ -7,7 +7,7 @@
  {
   "texto": "Tengo que pagar el impuesto",
   "cuando": 1788868800,
-  "enviado": false
+  "enviado": true
  },
  {
   "texto": "pruebe el disparador de recordatorios",
