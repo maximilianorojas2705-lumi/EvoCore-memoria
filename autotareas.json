@@ -1,1 +1,10 @@
-[]
+[
+ {
+  "id": "023835",
+  "descripcion": "Resumen diario del precio de Bitcoin a las 8:30 AR",
+  "accion": "import os, requests, json, datetime, time\n\ndef enviar_telegram(text):\n    token = os.getenv('TELEGRAM_BOT_TOKEN')\n    chat_id = os.getenv('TELEGRAM_CHAT_ID')\n    url = f'https://api.telegram.org/bot{token}/sendMessage'\n    requests.post(url, data={'chat_id': chat_id, 'text': text})\n\n# obtener precio Bitcoin\nresp = requests.get('https://api.coingecko.com/api/v3/simple/price', params={'ids':'bitcoin','vs_currencies':'usd','include_24hr_change':'true'})\nif resp.status_code==200:\n    data = resp.json()['bitcoin']\n    price = data['usd']\n    change = data['usd_24h_change']\n    mensaje = f\"💰 BTC: ${",
+  "cuando": 1788953400,
+  "repetir_segundos": 86400,
+  "activa": true
+ }
+]
