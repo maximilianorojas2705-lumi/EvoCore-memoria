@@ -6,5 +6,13 @@
   "cuando": 1788953400,
   "repetir_segundos": 86400,
   "activa": true
+ },
+ {
+  "id": "774a75",
+  "descripcion": "Auto‑tarea de prueba en 3 minutos",
+  "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto')",
+  "cuando": 1788893021,
+  "repetir_segundos": 0,
+  "activa": true
  }
 ]
