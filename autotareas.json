@@ -38,5 +38,13 @@
   "cuando": 1789007042.8974755,
   "repetir_segundos": 86400,
   "activa": true
+ },
+ {
+  "id": "40db3f",
+  "descripcion": "Autotarea diaria de Misión Libertad Financiera",
+  "accion": "import requests,os\nq=[\"ingresos pasivos 2026\",\"monetizacion IA automatizada\",\"herramientas SaaS escalables\",\"negocios online sin inventario\",\"arbitraje crypto automatico\",\"freelance AI tools\",\"dropshipping automatizado\",\"afiliados high ticket\",\"creacion contenido monetizable\",\"APIs monetizables\",\"bots trading crypto\",\"automatizacion ingresos pasivos\"]\nc=[]\nfor x in q:\n r=requests.post(\"https://api.tavily.com/search\",json={\"query\":x,\"max_results\":4},headers={\"Authorization\":\"Bearer \"+os.environ[\"TAVILY_KEY\"]},timeout=20)\n if r.ok:\n  for i in r.json().get(\"results\",[]):c.append(i.get(\"title\",\"\")",
+  "cuando": 1789034400,
+  "repetir_segundos": 86400,
+  "activa": true
  }
 ]
