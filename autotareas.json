@@ -1,42 +1,26 @@
 [
- {
-  "id": "dbde1f",
-  "descripcion": "BTC precio diario a las 8:30 Argentina",
-  "accion": "import requests\nr=requests.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true',timeout=15).json()\np=r['bitcoin']['usd']\nc=r['bitcoin']['usd_24h_change']\nenviar_telegram(f'💰 BTC: ${p:,.0f} USD | 24h: {c:+.1f}%')",
-  "cuando": 1788953400,
-  "repetir_segundos": 86400,
-  "activa": true
- },
- {
-  "id": "774a75",
-  "descripcion": "Auto‑tarea de prueba en 3 minutos",
-  "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto')",
-  "cuando": 1788893021,
-  "repetir_segundos": 0,
-  "activa": false
- },
- {
-  "id": "b4ae45",
-  "descripcion": "Auto-tarea de prueba tras fix",
-  "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto después del fix')",
-  "cuando": 1788897343,
-  "repetir_segundos": 0,
-  "activa": false
- },
- {
-  "id": "c5c7ed",
-  "descripcion": "Digestivo IA diario a las 08:00 ARG",
-  "accion": "import os, json, requests, datetime, time\n\n# Config\nqueries = [\n    'nuevos modelos IA hoy',\n    'frameworks de agentes IA 2026',\n    'herramientas nuevas para desarrolladores',\n    'metodos de monetizacion IA',\n    'novedades ciberseguridad',\n    'oportunidades grants open source IA'\n]\n\ndef tavily_search(query):\n    api_key = os.getenv('TAVILY_KEY')\n    if not api_key:\n        raise EnvironmentError('TAVILY_KEY not set')\n    url = 'https://api.tavily.com/search'\n    payload = {\n        'api_key': api_key,\n        'query': query,\n        'max_results': 5,\n        'include_answer': False,\n     ",
-  "cuando": 1788951600,
-  "repetir_segundos": 86400,
-  "activa": true
- },
- {
-  "id": "e01eb0",
-  "descripcion": "Radar de dinero - buscar oportunidades monetizables cada 12h",
-  "accion": "import os, json, re, datetime, time, requests, sys\n\ndef get_next_epoch(hour, minute=0, tz_offset=-3):\n    now_utc = datetime.datetime.now(datetime.timezone.utc)\n    now_local = now_utc + datetime.timedelta(hours=tz_offset)\n    target = now_local.replace(hour=hour, minute=minute, second=0, microsecond=0)\n    if target <= now_local:\n        target += datetime.timedelta(days=1)\n    return int((target - datetime.timedelta(hours=tz_offset)).timestamp())\n\n# Compute epoch for next 09:00 ARG (UTC-3)\nnext_epoch = get_next_epoch(9, 0, -3)\n\n# Tavily search queries\nqueries = [\n    \"grants AI open source a",
-  "cuando": 1788962308.370101,
-  "repetir_segundos": 43200,
-  "activa": true
- }
+  {
+    "id": "dbde1f",
+    "descripcion": "BTC precio diario a las 8:30 Argentina",
+    "accion": "import requests\nr=requests.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true',timeout=15).json()\np=r['bitcoin']['usd']\nc=r['bitcoin']['usd_24h_change']\nenviar_telegram(f'💰 BTC: ${p:,.0f} USD | 24h: {c:+.1f}%')",
+    "cuando": 1788953400,
+    "repetir_segundos": 86400,
+    "activa": true
+  },
+  {
+    "id": "774a75",
+    "descripcion": "Auto‑tarea de prueba en 3 minutos",
+    "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto')",
+    "cuando": 1788893021,
+    "repetir_segundos": 0,
+    "activa": false
+  },
+  {
+    "id": "b4ae45",
+    "descripcion": "Auto-tarea de prueba tras fix",
+    "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto después del fix')",
+    "cuando": 1788897343,
+    "repetir_segundos": 0,
+    "activa": false
+  }
 ]
