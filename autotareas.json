@@ -27,7 +27,7 @@
   "id": "06897d",
   "descripcion": "Radar de dinero",
   "accion": "import requests, os\nNL = chr(10)\nqueries = [\"grants AI open source aplicacion abierta\", \"bug bounty programs activos 2026\", \"airdrops crypto nuevos confirmados\", \"gigs freelance python AI\", \"bounties GitHub activos\"]\nlineas = []\nfor q in queries:\n    r = requests.post(\"https://api.tavily.com/search\", json={\"query\": q, \"max_results\": 3}, headers={\"Authorization\": \"Bearer \" + os.environ[\"TAVILY_KEY\"]}, timeout=20)\n    if r.status_code == 200:\n        for item in r.json().get(\"results\", []):\n            if item.get(\"url\"):\n                lineas.append(\"- \" + item.get(\"title\", \"\") + \" | \" + item.",
-  "cuando": 1694390400,
+  "cuando": 1788962922.1779525,
   "repetir_segundos": 43200,
   "activa": true
  }
