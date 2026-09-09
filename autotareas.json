@@ -35,7 +35,7 @@
   "id": "e01eb0",
   "descripcion": "Radar de dinero - buscar oportunidades monetizables cada 12h",
   "accion": "import os, json, re, datetime, time, requests, sys\n\ndef get_next_epoch(hour, minute=0, tz_offset=-3):\n    now_utc = datetime.datetime.now(datetime.timezone.utc)\n    now_local = now_utc + datetime.timedelta(hours=tz_offset)\n    target = now_local.replace(hour=hour, minute=minute, second=0, microsecond=0)\n    if target <= now_local:\n        target += datetime.timedelta(days=1)\n    return int((target - datetime.timedelta(hours=tz_offset)).timestamp())\n\n# Compute epoch for next 09:00 ARG (UTC-3)\nnext_epoch = get_next_epoch(9, 0, -3)\n\n# Tavily search queries\nqueries = [\n    \"grants AI open source a",
-  "cuando": 0,
+  "cuando": 1788962308.370101,
   "repetir_segundos": 43200,
   "activa": true
  }
