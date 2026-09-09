@@ -35,7 +35,7 @@
   "id": "c397c2",
   "descripcion": "Digestivo IA",
   "accion": "import requests,os\nq=[\"nuevos modelos IA\",\"agentes IA\",\"herramientas dev\",\"monetizacion IA\",\"ciberseguridad\",\"grants open source\"]\nc=[]\nfor x in q:\n r=requests.post(\"https://api.tavily.com/search\",json={\"query\":x,\"max_results\":3},headers={\"Authorization\":\"Bearer \"+os.environ[\"TAVILY_KEY\"]},timeout=20)\n if r.ok:\n  for i in r.json().get(\"results\",[]):c.append(i.get(\"title\",\"\")+\" | \"+i.get(\"url\",\"\"))\na=llamar_obrero(\"Sos investigador IA. Datos:\\n\"+\"\\n\".join(c[:30])+\"\\nDevuelve: 5 novedades top, 3 sugerencias para EvoCore, 2 oportunidades de dinero.\",\"investigador\")\nenviar_telegram(\"🧠 DIGESTIVO IA",
-  "cuando": 1760180400,
+  "cuando": 1789007042.8974755,
   "repetir_segundos": 86400,
   "activa": true
  }
