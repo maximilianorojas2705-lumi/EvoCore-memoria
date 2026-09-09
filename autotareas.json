@@ -1,26 +1,34 @@
 [
-  {
-    "id": "dbde1f",
-    "descripcion": "BTC precio diario a las 8:30 Argentina",
-    "accion": "import requests\nr=requests.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true',timeout=15).json()\np=r['bitcoin']['usd']\nc=r['bitcoin']['usd_24h_change']\nenviar_telegram(f'💰 BTC: ${p:,.0f} USD | 24h: {c:+.1f}%')",
-    "cuando": 1788953400,
-    "repetir_segundos": 86400,
-    "activa": true
-  },
-  {
-    "id": "774a75",
-    "descripcion": "Auto‑tarea de prueba en 3 minutos",
-    "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto')",
-    "cuando": 1788893021,
-    "repetir_segundos": 0,
-    "activa": false
-  },
-  {
-    "id": "b4ae45",
-    "descripcion": "Auto-tarea de prueba tras fix",
-    "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto después del fix')",
-    "cuando": 1788897343,
-    "repetir_segundos": 0,
-    "activa": false
-  }
+ {
+  "id": "dbde1f",
+  "descripcion": "BTC precio diario a las 8:30 Argentina",
+  "accion": "import requests\nr=requests.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true',timeout=15).json()\np=r['bitcoin']['usd']\nc=r['bitcoin']['usd_24h_change']\nenviar_telegram(f'💰 BTC: ${p:,.0f} USD | 24h: {c:+.1f}%')",
+  "cuando": 1788953400,
+  "repetir_segundos": 86400,
+  "activa": true
+ },
+ {
+  "id": "774a75",
+  "descripcion": "Auto‑tarea de prueba en 3 minutos",
+  "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto')",
+  "cuando": 1788893021,
+  "repetir_segundos": 0,
+  "activa": false
+ },
+ {
+  "id": "b4ae45",
+  "descripcion": "Auto-tarea de prueba tras fix",
+  "accion": "enviar_telegram('🤖 Auto-tarea funcionando perfecto después del fix')",
+  "cuando": 1788897343,
+  "repetir_segundos": 0,
+  "activa": false
+ },
+ {
+  "id": "06897d",
+  "descripcion": "Radar de dinero",
+  "accion": "import requests, os\nNL = chr(10)\nqueries = [\"grants AI open source aplicacion abierta\", \"bug bounty programs activos 2026\", \"airdrops crypto nuevos confirmados\", \"gigs freelance python AI\", \"bounties GitHub activos\"]\nlineas = []\nfor q in queries:\n    r = requests.post(\"https://api.tavily.com/search\", json={\"query\": q, \"max_results\": 3}, headers={\"Authorization\": \"Bearer \" + os.environ[\"TAVILY_KEY\"]}, timeout=20)\n    if r.status_code == 200:\n        for item in r.json().get(\"results\", []):\n            if item.get(\"url\"):\n                lineas.append(\"- \" + item.get(\"title\", \"\") + \" | \" + item.",
+  "cuando": 1694390400,
+  "repetir_segundos": 43200,
+  "activa": true
+ }
 ]
