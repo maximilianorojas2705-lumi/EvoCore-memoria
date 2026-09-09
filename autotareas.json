@@ -22,5 +22,13 @@
   "cuando": 1788897343,
   "repetir_segundos": 0,
   "activa": false
+ },
+ {
+  "id": "c5c7ed",
+  "descripcion": "Digestivo IA diario a las 08:00 ARG",
+  "accion": "import os, json, requests, datetime, time\n\n# Config\nqueries = [\n    'nuevos modelos IA hoy',\n    'frameworks de agentes IA 2026',\n    'herramientas nuevas para desarrolladores',\n    'metodos de monetizacion IA',\n    'novedades ciberseguridad',\n    'oportunidades grants open source IA'\n]\n\ndef tavily_search(query):\n    api_key = os.getenv('TAVILY_KEY')\n    if not api_key:\n        raise EnvironmentError('TAVILY_KEY not set')\n    url = 'https://api.tavily.com/search'\n    payload = {\n        'api_key': api_key,\n        'query': query,\n        'max_results': 5,\n        'include_answer': False,\n     ",
+  "cuando": 1788951600,
+  "repetir_segundos": 86400,
+  "activa": true
  }
 ]
