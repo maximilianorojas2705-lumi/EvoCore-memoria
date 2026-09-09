@@ -7,5 +7,14 @@
   "modo": "aprobación manual de Maxi",
   "buscar": "return {\"status\": \"ok\", \"servicio\": \"Backend EvoCore\"}",
   "reemplazar": "return {\"status\": \"ok\", \"servicio\": \"Backend EvoCore\"}"
+ },
+ {
+  "id": "c1866b04",
+  "fecha": "08/09/2026 22:19",
+  "descripcion": "Guarda anti-no-op al inicio de registrar_propuesta",
+  "impacto": "Evita commits y deploys gastados en propuestas sin diferencias reales",
+  "modo": "aprobación manual de Maxi",
+  "buscar": "def registrar_propuesta(args):\n    import uuid\n    propuesta_id = str(uuid.uuid4())[:8]",
+  "reemplazar": "def registrar_propuesta(args):\n    if args.get('buscar', '').strip() == args.get('reemplazar', '').strip():\n        return 'Propuesta descartada: no h"
  }
 ]
