@@ -54,5 +54,13 @@
   "cuando": 1789081315.069791,
   "repetir_segundos": 43200,
   "activa": true
+ },
+ {
+  "id": "a98ef3",
+  "descripcion": "test",
+  "accion": "print('test')",
+  "cuando": 0,
+  "repetir_segundos": 0,
+  "activa": true
  }
 ]
