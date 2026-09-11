@@ -51,7 +51,7 @@
   "id": "1bbc2c",
   "descripcion": "Cazador de oportunidades",
   "accion": "import requests,os\nNL=chr(10)\nr=requests.get(\"https://raw.githubusercontent.com/maximilianorojas2705-lumi/evocore-herramientas/main/tools/cazador_oportunidades.py\",timeout=20)\ng={\"name\":\"modulo\"}\nexec(r.text,g)\nenviar_telegram(\"🎯 CAZADOR DE OPORTUNIDADES:\"+NL+g[\"generar_reporte\"]())",
-  "cuando": 1789167879.2738297,
+  "cuando": 1789211115.8333874,
   "repetir_segundos": 43200,
   "activa": true
  },
