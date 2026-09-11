@@ -43,7 +43,7 @@
   "id": "d1883f",
   "descripcion": "Misión Libertad Financiera",
   "accion": "import requests,os\nq=[\"ingresos pasivos 2026\",\"monetizacion IA\",\"SaaS escalables\",\"negocios online\",\"arbitraje crypto\",\"freelance AI\",\"dropshipping automatizado\",\"afiliados high ticket\",\"APIs monetizables\",\"bots trading\"]\nc=[]\nfor x in q:\n r=requests.post(\"https://api.tavily.com/search\",json={\"query\":x,\"max_results\":4},headers={\"Authorization\":\"Bearer \"+os.environ[\"TAVILY_KEY\"]},timeout=20)\n if r.ok:\n  for i in r.json().get(\"results\",[]):c.append(i.get(\"title\",\"\")+\" | \"+i.get(\"url\",\"\"))\nNL=chr(10)\np=\"Sos experto monetizacion. Datos:\"+NL+NL.join(c[:40])+NL+\"Devuelve: 5 metodos activos con URLs,",
-  "cuando": 1789121139.6971807,
+  "cuando": 1789207700.4009955,
   "repetir_segundos": 86400,
   "activa": true
  },
