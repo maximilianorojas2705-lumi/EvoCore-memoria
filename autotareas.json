@@ -27,7 +27,7 @@
   "id": "76cc88",
   "descripcion": "Radar de dinero",
   "accion": "import requests,os\nq=[\"grants AI open source\",\"bug bounty 2026\",\"airdrops crypto\",\"gigs freelance AI\",\"bounties GitHub\"]\nl=[]\nfor x in q:\n r=requests.post(\"https://api.tavily.com/search\",json={\"query\":x,\"max_results\":3},headers={\"Authorization\":\"Bearer \"+os.environ[\"TAVILY_KEY\"]},timeout=20)\n if r.ok:\n  for i in r.json().get(\"results\",[]):l.append(\"- \"+i.get(\"title\",\"\")+\" | \"+i.get(\"url\",\"\"))\nenviar_telegram(\"💰 RADAR:\\n\"+\"\\n\".join(l[:5]))",
-  "cuando": 1789085011.49596,
+  "cuando": 1789128302.1839876,
   "repetir_segundos": 43200,
   "activa": true
  },
